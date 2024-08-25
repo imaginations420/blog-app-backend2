@@ -20,10 +20,7 @@ const db = new sqlite3.Database(path.join(__dirname, 'blog.db'), (err) => {
                 console.log('Posts table created or already exists.');
                 // Insert default data
                 db.run(`INSERT INTO posts (title, content, excerpt) VALUES 
-                    ('First Post', 'This is the content of the first post.', 'This is an excerpt for the first post.'),
-                    ('Second Post', 'This is the content of the second post.', 'This is an excerpt for the second post.'),
-                    ('Third Post', 'This is the content of the third post.', 'This is an excerpt for the third post.'),
-                    ('Fourth Post', 'This is the content of the fourth post.', 'This is an excerpt for the fourth post.')
+                    ('First Post', 'This is the content of the first post.', 'This is an excerpt for the first post.')
                 `, (err) => {
                     if (err) {
                         console.error('Error inserting default posts ' + err.message);
