@@ -22,7 +22,7 @@ app.get('/posts', (req, res) => {
 
 // Get a specific post
 app.get('/posts/:id', (req, res) => {
-    const { id } = req.params.id;
+    const { id } = req.params;
     db.get('SELECT * FROM posts WHERE id = ?', [id], (err, row) => {
         if (err) {
             res.status(500).json({ error: err.message });
